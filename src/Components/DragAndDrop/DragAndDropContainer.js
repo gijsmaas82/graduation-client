@@ -96,6 +96,10 @@ class DragAndDropContainer extends Component {
     this.setState({ apples: updatedDropState })
   }
 
+  onEnded = () => {
+    this.props.history.push('/')
+  }
+
   render() {
     
     const droppedApple = this.state.apples.find(apple => {
@@ -111,8 +115,6 @@ class DragAndDropContainer extends Component {
       this.setState({ apples: remainingApples, droppedApples: this.state.droppedApples.concat(droppedApple.id) })
     }
 
-    console.log('droppedApples:', this.state.droppedApples)
-
     return (
       <div>
         <DragAndDrop
@@ -121,6 +123,7 @@ class DragAndDropContainer extends Component {
         droppedApples={this.state.droppedApples}
         onDragStart={this.onDragStart}
         onDragEnd={this.onDragEnd}
+        onEnded={this.onEnded}
          />
         
 

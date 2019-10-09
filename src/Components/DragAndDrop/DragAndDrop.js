@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
-import { Stage, Layer, Circle, Image, Path } from 'react-konva';
-import useImage from 'use-image';
+import ReactPlayer from 'react-player'
+import { Stage, Layer, Path } from 'react-konva';
+// import useImage from 'use-image';
 import './DragAndDrop.css'
 
 
@@ -10,7 +10,9 @@ export default class DragAndDrop extends Component {
     return (
       <div className="dragAndDropWrapper">
         <h1> Apple Picking </h1>
-        {this.props.gameOver ? 'Game over' :
+        {this.props.gameOver ? 
+        <ReactPlayer width="900px" height="500px"url='https://www.youtube.com/watch?v=NCFg7G63KgI' playing loop={false} onEnded={this.props.onEnded} />
+        :
         <div className="stage">
           <Stage  width={900} height={500}>
             <Layer>
