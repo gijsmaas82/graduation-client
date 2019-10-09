@@ -1,13 +1,64 @@
 import React, { Component } from 'react'
 import HomePage from './HomePage'
+import Konva from 'konva';
 
 
 export default class HomepageContainer extends Component {
+
+  state = {
+    apple: {
+      x: 100,
+      y: 100
+    }
+  }
+
+  onDragStart = (e) => {
+    
+    e.target.setAttrs({
+      shadowOffset: {
+        x: 15,
+        y: 15
+      },
+      scaleX: 0.8,
+      scaleY: 0.8,
+      rotation: Math.random() * 180
+    });
+
+    e.target.to({
+      duration: 0.5,
+      easing: Konva.Easings.ElasticEaseIn,
+    })
+  }
+
+  onDragEnd = (e) => {
+
+    e.target.to({
+      duration: 0.5,
+      easing: Konva.Easings.ElasticEaseOut,
+      scaleX: 0.5,
+      scaleY: 0.5,
+      shadowOffsetX: 5,
+      shadowOffsetY: 5
+    })
+    
+    if (e.target.x() - this.state.apple.x >= 0 && e.target.x() - this.state.apple.x <= 200 && e.target.y() - this.state.apple.y >= 0 && e.target.y() - this.state.apple.y <= 200) {
+      this.props.history.push('/picking-apples/')
+    }
+  }
+
+  
+
   render() {
     return (
       <div>
-        <HomePage />
+        <HomePage 
+        apple={this.state.apple}
+        onDragStart={this.onDragStart}
+        onDragEnd={this.onDragEnd}
+         />
       </div>
     )
   }
 }
+
+
