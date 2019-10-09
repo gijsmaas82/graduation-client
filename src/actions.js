@@ -20,3 +20,17 @@ export const register = (name) => dispatch => {
   })
   .catch(console.error)
 }
+
+export const SET_APPLES = 'SET_APPLES'
+
+function setApples(payload) {
+  return{
+    type: SET_APPLES,
+    payload
+  }
+}
+
+export const getApples = (apples) => dispatch => {  
+  const action = setApples(apples)
+  dispatch(action)
+}
