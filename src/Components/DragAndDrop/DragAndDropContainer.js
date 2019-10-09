@@ -11,36 +11,36 @@ class DragAndDropContainer extends Component {
         id: 0, 
         isDragging: false,
         dropped: false,
-        x: Math.floor(Math.random() * window.innerWidth),
-        y: Math.floor(Math.random() * window.innerHeight)
+        x: Math.floor(Math.random() * 700),
+        y: Math.floor(Math.random() * 400)
       },{
         id: 1, 
         isDragging: false,
         dropped: false,
-        x: Math.floor(Math.random() * window.innerWidth),
-        y: Math.floor(Math.random() * window.innerHeight)
+        x: Math.floor(Math.random() * 700),
+        y: Math.floor(Math.random() * 400)
       },{
         id: 2, 
         isDragging: false,
         dropped: false,
-        x: Math.floor(Math.random() * window.innerWidth),
-        y: Math.floor(Math.random() * window.innerHeight)
+        x: Math.floor(Math.random() * 700),
+        y: Math.floor(Math.random() * 400)
       },{
         id: 3, 
         isDragging: false,
         dropped: false,
-        x: Math.floor(Math.random() * window.innerWidth),
-        y: Math.floor(Math.random() * window.innerHeight)
+        x: Math.floor(Math.random() * 700),
+        y: Math.floor(Math.random() * 400)
       },{
         id: 4, 
         isDragging: false,
         dropped: false,
-        x: Math.floor(Math.random() * window.innerWidth),
-        y: Math.floor(Math.random() * window.innerHeight)
+        x: Math.floor(Math.random() * 700),
+        y: Math.floor(Math.random() * 400)
       }],
     basket: {
-      x: Math.floor(Math.random() * window.innerWidth),
-      y: Math.floor(Math.random() * window.innerHeight)
+      x: Math.floor(Math.random() * 700),
+      y: 350
       },
     gameOver: false,
     droppedApples: [0]
