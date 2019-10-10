@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import HeaderContainer from '../Header/HeaderContainer'
 import Drawing from './Drawing'
 
 export default class DrawingContainer extends Component {
@@ -64,6 +65,7 @@ export default class DrawingContainer extends Component {
     console.log('state:', this.state)
     return (
       <div>
+        <HeaderContainer />
         <Drawing
         isPaint={this.state.isPaint} 
         lines={this.state.lines}

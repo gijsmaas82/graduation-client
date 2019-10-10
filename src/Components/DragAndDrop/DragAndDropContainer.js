@@ -3,6 +3,7 @@ import DragAndDrop from './DragAndDrop'
 import Konva from 'konva';
 import { connect } from 'react-redux'
 import { getApples } from '../../actions'
+import HeaderContainer from '../Header/HeaderContainer'
 
 class DragAndDropContainer extends Component {
   state = {
@@ -117,6 +118,7 @@ class DragAndDropContainer extends Component {
 
     return (
       <div>
+        <HeaderContainer />
         <DragAndDrop
         position={this.state}
         gameOver={this.state.gameOver}

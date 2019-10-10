@@ -83,3 +83,11 @@
   display: flex;
   justify-content: left;
 }
+
+.drawing img{
+  background-color: white;
+  height: 150px;
+  width: 250px;
+  border: solid purple 3px;
+  border-radius: 30px;
+}

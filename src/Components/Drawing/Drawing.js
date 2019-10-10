@@ -71,7 +71,7 @@ export default class Drawing extends Component {
         <div className="drawings">
           {this.props.drawings.map(drawing => {
             return <div className="drawing">
-                <img src={drawing} width="100px" height="60px" alt="drawing" />
+                <img src={drawing} alt="drawing" />
               </div>
           })}
         </div>

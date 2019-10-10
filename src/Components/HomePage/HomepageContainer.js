@@ -9,6 +9,10 @@ export default class HomepageContainer extends Component {
     apple: {
       x: 100,
       y: 100
+    }, 
+    pencil: {
+      x: 700,
+      y: 200
     }
   }
 
@@ -44,6 +48,10 @@ export default class HomepageContainer extends Component {
     if (e.target.x() - this.state.apple.x >= 0 && e.target.x() - this.state.apple.x <= 200 && e.target.y() - this.state.apple.y >= 0 && e.target.y() - this.state.apple.y <= 200) {
       this.props.history.push('/picking-apples/')
     }
+
+    if (e.target.x() - this.state.pencil.x >= 0 && e.target.x() - this.state.pencil.x <= 200 && e.target.y() - this.state.pencil.y >= 0 && e.target.y() - this.state.pencil.y <= 200) {
+      this.props.history.push('/drawing/')
+    }
   }
 
   
@@ -53,6 +61,7 @@ export default class HomepageContainer extends Component {
       <div>
         <HomePage 
         apple={this.state.apple}
+        pencil={this.state.pencil}
         onDragStart={this.onDragStart}
         onDragEnd={this.onDragEnd}
          />
