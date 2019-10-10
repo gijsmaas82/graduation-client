@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import HeaderContainer from '../Header/HeaderContainer'
+
 import Drawing from './Drawing'
 
 export default class DrawingContainer extends Component {
@@ -13,9 +13,11 @@ export default class DrawingContainer extends Component {
     color: "blue"
   }
 
-  onMouseDown = (e) => {
+  onTouchStart = (e) => {
     const stage = e.target.getStage()
+    
     const pos = stage.getPointerPosition()
+    
     this.setState({ 
       isPaint: !this.state.isPaint, 
       newLine: [pos.x, pos.y], 
@@ -23,7 +25,7 @@ export default class DrawingContainer extends Component {
 
   }
 
-  onMouseUp = (e) => {
+  onTouchEnd = (e) => {
     // const pos = e.target.getPointerPosition()
     // const newLine = this.state.newLine.concat([pos.x, pos.y])
     // console.log('new line:', newLine)
@@ -31,11 +33,12 @@ export default class DrawingContainer extends Component {
       isPaint: !this.state.isPaint })
   }
 
-  onMouseMove = (e) => {
+  onTouchMove = (e) => {
     
     if (this.state.isPaint) {
       const stage = e.target.getStage()
       const pos = stage.getPointerPosition()
+      console.log('stage:', stage, 'pos:', pos)
       const newLine = this.state.newLine.concat([pos.x, pos.y])
       const newLineColored = { line: newLine, color: this.state.color }
       console.log('new line:', newLine)
@@ -46,8 +49,14 @@ export default class DrawingContainer extends Component {
     }  
   }
 
-  onMouseLeave = (e) => {
+  onDragStart = (e) => {
+    
     const stage = e.target.getStage()
+    const pos = stage.getPointerPosition()
+    e.target.setAttrs({
+      x: pos.x,
+      y: pos.y
+    })
     const drawing = stage.toDataURL()
     this.setState({ lines: [[0, 0, 0, 0]], drawings: this.state.drawings.concat(drawing), newDrawing: !this.state.newDrawing})
     // console.log('dataUrl:', dataUrl)
@@ -65,18 +74,18 @@ export default class DrawingContainer extends Component {
     console.log('state:', this.state)
     return (
       <div>
-        <HeaderContainer />
+        
         <Drawing
         isPaint={this.state.isPaint} 
         lines={this.state.lines}
         drawing={this.state.drawing}
         drawings={this.state.drawings}
-        color={this.props.color}
+        color={this.state.color}
         newDrawing={this.state.newDrawing}
-        onMouseMove={this.onMouseMove}
-        onMouseDown={this.onMouseDown}
-        onMouseUp={this.onMouseUp}
-        onMouseLeave={this.onMouseLeave}
+        onTouchMove={this.onTouchMove}
+        onTouchStart={this.onTouchStart}
+        onTouchEnd={this.onTouchEnd}
+        onDragStart={this.onDragStart}
         newDrawingFn={this.newDrawingFn}
         changeColor={this.changeColor}
          />

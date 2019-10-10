@@ -8,35 +8,29 @@ export default class Header extends Component {
     
     return (
         <div className="navbar" >
-        
-          <Link to={'/'} >
-            <svg width="98" height="60" viewBox="0 0 196 161" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_bdif)">
-            <path d="M7.66874 70.6395C3.73613 74.5172 3.69161 80.8487 7.56929 84.7813L70.7598 148.867C74.6375 152.799 80.969 152.844 84.9016 148.966C88.8342 145.089 88.8787 138.757 85.001 134.825L28.8317 77.8596L85.7966 21.6902C89.7292 17.8125 89.7738 11.4811 85.8961 7.54845C82.0184 3.61584 75.6869 3.57131 71.7543 7.449L7.66874 70.6395ZM191.07 69.0002L14.7602 67.7604L14.6196 87.7599L190.93 88.9998L191.07 69.0002Z" fill="#7781A6"/>
-            </g>
-            <defs>
-            <filter id="filter0_bdif" x="0.172302" y="0.0520172" width="195.346" height="160.586" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-            <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-            <feGaussianBlur in="BackgroundImage" stdDeviation="2"/>
-            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="2"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-            <feBlend mode="normal" in2="effect1_backgroundBlur" result="effect2_dropShadow"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="2"/>
-            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-            <feBlend mode="normal" in2="shape" result="effect3_innerShadow"/>
-            <feGaussianBlur stdDeviation="2" result="effect4_foregroundBlur"/>
-            </filter>
-            </defs>
+          
+          <div className="homeButton">
+            <Link to={'/'} >
+            <svg width="70" height="60" viewBox="0 0 283 245" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M89.5 226.5C80.1667 227 61.2 208.5 60 130.5H1C16 93.3333 63 15.6 131 2C199 -11.6 259.667 82 281.5 130.5H221C230.833 149 240.6 194.1 201 226.5C161.4 258.9 110.167 240 89.5 226.5Z" 
+              shadowBlur={5}
+              shadowOpacity={0.6}
+              stroke="black"
+              strokeWidth="8"
+              fill="purple"
+              />
             </svg>
+            </Link>
+          </div>
+          <div className="profile">
+          <Link to={'/profile/'} >
+          <svg width="70" height="60" viewBox="0 0 190 188" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 160.5C-10.4 116.1 6.16662 53 18 27C120.5 -13.5 53.5 83 86 27C112 -17.8 153.833 8.33334 171.5 27C185.333 48.6667 203.1 97 163.5 117C123.9 137 95.3333 120 86 109V160.5C75.1666 179 46.4 204.9 18 160.5Z" fill="#7715F4"/>
+            <path d="M129.5 50.5V84.5M18 27C6.16662 53 -10.4 116.1 18 160.5C46.4 204.9 75.1667 179 86 160.5V109C95.3333 120 123.9 137 163.5 117C203.1 97 185.333 48.6667 171.5 27C153.833 8.33334 112 -17.8 86 27C53.5 83 120.5 -13.5 18 27Z" stroke="black" stroke-width="4"/>
+          </svg>
           </Link>
           </div>
+        </div>
           
    
     )
