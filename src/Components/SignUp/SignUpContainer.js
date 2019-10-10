@@ -19,7 +19,7 @@ export default class SignupFormContainer extends Component {
     onSubmit = (event) => {
       event.preventDefault()
       this.signUp(this.state.name, this.state.password)
-      this.props.history.push('/profile/')
+      this.props.history.push('/login/')
       
     }
   

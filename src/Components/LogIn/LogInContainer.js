@@ -13,7 +13,7 @@ class LogInContainer extends Component {
       name: '',
       password: ''
     })
-    this.props.history.push('/profile/')
+    this.props.history.push('/')
   }
 
   onChange = (event) => {
