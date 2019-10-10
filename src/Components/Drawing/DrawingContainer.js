@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
 import Drawing from './Drawing'
+// import request from 'superagent'
+// const { url } = require('../../constants')
 
-export default class DrawingContainer extends Component {
+class DrawingContainer extends Component {
   state = {
     newDrawing: false,
     isPaint: false,
@@ -52,14 +54,18 @@ export default class DrawingContainer extends Component {
   onDragStart = (e) => {
     
     const stage = e.target.getStage()
-    const pos = stage.getPointerPosition()
-    e.target.setAttrs({
-      x: pos.x,
-      y: pos.y
-    })
+    
     const drawing = stage.toDataURL()
+
+    // request
+    //   .post(`${url}/drawing`)
+    //   .set('Authorization', `Bearer ${this.props.user.jwt}`)
+    //   .send({ URL: drawing })
+    //   .then(response => console.log(response))
+    //   .catch(console.error)
+    
     this.setState({ lines: [[0, 0, 0, 0]], drawings: this.state.drawings.concat(drawing), newDrawing: !this.state.newDrawing})
-    // console.log('dataUrl:', dataUrl)
+    
   }
 
   newDrawingFn = (e) => {
@@ -94,3 +100,10 @@ export default class DrawingContainer extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.login
+  }
+}
+
+export default connect(mapStateToProps)(DrawingContainer)
