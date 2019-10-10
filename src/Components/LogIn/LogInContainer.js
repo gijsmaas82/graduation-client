@@ -1,0 +1,46 @@
+import React, { Component } from 'react'
+import LogIn from './LogIn'
+import { connect } from 'react-redux'
+import { login } from '../../actions'
+
+class LogInContainer extends Component {
+  state = { name: '', password: '' }
+
+  onSubmit = (event) => {
+    event.preventDefault()
+    this.props.login(this.state.name, this.state.password)
+    this.setState({
+      name: '',
+      password: ''
+    })
+    this.props.history.push('/profile/')
+  }
+
+  onChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  render() {
+    const loggedIn = this.props.user
+    return ( 
+      <div>  
+        <LogIn      
+          onSubmit={this.onSubmit}
+          onChange={this.onChange}
+          values={this.state}
+          loggedIn={loggedIn}
+        />
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.login
+  }
+}
+
+export default connect(mapStateToProps, { login })(LogInContainer)

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import HomePage from './HomePage'
 import Konva from 'konva';
+import { connect } from 'react-redux'
 
 
-export default class HomepageContainer extends Component {
+class HomepageContainer extends Component {
 
   state = {
     apple: {
@@ -45,11 +46,11 @@ export default class HomepageContainer extends Component {
       shadowOffsetY: 5
     })
     
-    if (e.target.x() - this.state.apple.x >= 0 && e.target.x() - this.state.apple.x <= 200 && e.target.y() - this.state.apple.y >= 0 && e.target.y() - this.state.apple.y <= 200) {
+    if (this.props.user.jwt && e.target.x() - this.state.apple.x >= 0 && e.target.x() - this.state.apple.x <= 200 && e.target.y() - this.state.apple.y >= 0 && e.target.y() - this.state.apple.y <= 200) {
       this.props.history.push('/picking-apples/')
     }
 
-    if (e.target.x() - this.state.pencil.x >= 0 && e.target.x() - this.state.pencil.x <= 200 && e.target.y() - this.state.pencil.y >= 0 && e.target.y() - this.state.pencil.y <= 200) {
+    if (this.props.user.jwt && e.target.x() - this.state.pencil.x >= 0 && e.target.x() - this.state.pencil.x <= 200 && e.target.y() - this.state.pencil.y >= 0 && e.target.y() - this.state.pencil.y <= 200) {
       this.props.history.push('/drawing/')
     }
   }
@@ -70,4 +71,10 @@ export default class HomepageContainer extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.login
+  }
+}
 
+export default connect(mapStateToProps)(HomepageContainer)

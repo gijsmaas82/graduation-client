@@ -40,7 +40,7 @@ export default class HomePage extends Component {
 
             <Path
               x={400}
-              y={100}
+              y={123}
               scaleX={0.5}
               scaleY={0.5}
               shadowBlur={5}
