@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Drawing from './Drawing'
-// import request from 'superagent'
-// const { url } = require('../../constants')
+import request from 'superagent'
+const { url } = require('../../constants')
 
 class DrawingContainer extends Component {
   state = {
@@ -56,13 +56,13 @@ class DrawingContainer extends Component {
     const stage = e.target.getStage()
     
     const drawing = stage.toDataURL()
-
-    // request
-    //   .post(`${url}/drawing`)
-    //   .set('Authorization', `Bearer ${this.props.user.jwt}`)
-    //   .send({ URL: drawing })
-    //   .then(response => console.log(response))
-    //   .catch(console.error)
+console.log(drawing)
+    request
+      .post(`${url}/drawing`)
+      .set('Authorization', `Bearer ${this.props.user.jwt}`)
+      .send({ URL: drawing })
+      .then(response => console.log(response))
+      .catch(console.error)
     
     this.setState({ lines: [[0, 0, 0, 0]], drawings: this.state.drawings.concat(drawing), newDrawing: !this.state.newDrawing})
     
