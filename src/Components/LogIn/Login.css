@@ -1,0 +1,42 @@
+.logInWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logInWrapper h1 {
+  width: 100%;
+  font-family: 'Lexend Zetta', sans-serif;
+  color: rgb(45, 7, 89);
+  text-align: center;
+}
+
+.logInWrapper p {
+  font-family: 'Varela', sans-serif;
+  color: rgb(45, 7, 89);
+  
+}
+
+.logInBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.logInBox div {
+  border: 2px solid rgb(45, 7, 89);
+  background: rgba(124, 127, 117, 0.2);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0220, 0.4);
+  border-radius: 10px;
+  padding: 3px 10px;
+}
+
+.logInBox label {
+  font-family: 'Varela', sans-serif;
+  color: rgb(45, 7, 89);
+}
+
+.logInBox button {
+  background-color: rgba(124, 127, 117, 0.2);
+  font-family: 'Varela', sans-serif;
+  color: rgb(45, 7, 89);
+}

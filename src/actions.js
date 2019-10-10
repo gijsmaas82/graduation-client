@@ -34,3 +34,23 @@ export const getApples = (apples) => dispatch => {
   const action = setApples(apples)
   dispatch(action)
 }
+
+export const JWT = 'JWT'
+
+function jwt(payload) {
+  return{
+    type: JWT,
+    payload
+  }
+}
+
+export const login = (name, password) => dispatch => {  
+  request
+  .post(`${url}/login`)
+  .send({ name, password })
+  .then(res => {
+    const action = jwt(res.body)
+    dispatch(action)
+  })
+  .catch(console.error)
+}
