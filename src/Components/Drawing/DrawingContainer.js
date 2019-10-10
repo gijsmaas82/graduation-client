@@ -56,7 +56,6 @@ class DrawingContainer extends Component {
     const stage = e.target.getStage()
     
     const drawing = stage.toDataURL()
-console.log(drawing)
     request
       .post(`${url}/drawing`)
       .set('Authorization', `Bearer ${this.props.user.jwt}`)
