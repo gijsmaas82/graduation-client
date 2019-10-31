@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Melle's Videogame Room
 
-## Available Scripts
+This is project was built as part of a hackathon where I had to built a full-stack application with a new technology in two days. This is the front-end, the most interesting part because here I used react-konva to use the canvas element to built games for my son Melle. Check out [this](https://github.com/gijsmaas82/graduation-server) repository if you are interested in the backend. 
 
-In the project directory, you can run:
+Check out this [link](https://competent-wiles-1fe4cc.netlify.com/games) to see a deployed version of the games
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Features
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* React-konva and canvas
+* Homepage
+* Apple picking
+* Coloring
 
-### `npm test`
+### React-konva and canvas
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Canvas is a html-element that lets you interact with your screen on another level. React-konva is a library that lets you use the canvas within React. It lets you do animation and make elements draggable on the screen and is a great way to experiment with new UI-design. 
 
-### `npm run build`
+### Homepage
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+On the homepage you can drag the baby-avatar to the apple and the pencil. This lets the canvas know which game you want to play. The main user is my son who is now 1 and a half and he understands it! After you drop the baby at the right spot you're directed to the game you chose.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Apple picking
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This game randomly generates apples on the screen and a basket to put them in. After you collected all the apples by dragging them to the basket you are rewarded with a video.
 
-### `npm run eject`
+### Coloring
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This game lets you color a coloring plate. You can change the colors by pressing the colored buttons on the side. It stores all the coordinates of all the touches a user made on the screen with the correct color in local state. If you click on the save button it makes a DataUrl that is saved in local state but can also be saved in the backend.
